@@ -1,5 +1,4 @@
 import openSocket from 'socket.io-client';
-
 import * as types from '../constants/ActionTypes';
 import { messageReceived, populateUsersList } from '../actions';
 

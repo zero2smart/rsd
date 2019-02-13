@@ -1,4 +1,5 @@
 import * as types from '../constants/ActionTypes';
+import { createAction } from 'redux-actions';
 
 let nextMessageId = 0;
 const nextUserId = 0;
@@ -9,6 +10,11 @@ export const addMessage = (message, author) => ({
   message,
   author
 });
+
+export const addMessage = createAction(
+  types.ADD_MESSAGE,
+  ({ message, author }) => ({ id: nextMessageId++, message, author })
+);
 
 export const messageReceived = (message, author) => ({
   type: types.MESSAGE_RECEIVED,
